@@ -43,14 +43,11 @@
 	</dependencies>
 
 	<build>
-		<finalName>Github-Action-CI-CD</finalName>
 		<plugins>
-
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<executable>true</executable>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -58,7 +55,7 @@
 						</exclude>
 					</excludes>
 					<image>
-						<name>gloire/${project.artifactId}</name>
+						<name>gloire/${project.artifactId}:${project.version}</name>
 					</image>
 					<docker>
 						<publishRegistry>

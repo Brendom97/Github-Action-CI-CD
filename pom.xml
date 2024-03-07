@@ -43,7 +43,9 @@
 	</dependencies>
 
 	<build>
+		<finalName>Github-Action-CI-CD</finalName>
 		<plugins>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -55,6 +57,16 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<image>
+						<name>gloire/${project.artifactId}</name>
+					</image>
+					<docker>
+						<publishRegistry>
+							<username>${docker.user}</username>
+							<password>${docker.token}</password>
+							<url>https://index.docker.io/v1</url>
+						</publishRegistry>
+					</docker>
 				</configuration>
 			</plugin>
 		</plugins>
